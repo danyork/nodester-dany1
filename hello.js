@@ -1,9 +1,9 @@
-var express = require('express');
+var http = require('http');
 
-var app = express.createServer();
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(8226);
 
-app.get('/', function(req, res){
-    res.send('Hello World! Welcome to Nodester! (via Express)');
-});
+console.log('Server running at http://dany1.nodester.com/');
 
-app.listen(8226);
